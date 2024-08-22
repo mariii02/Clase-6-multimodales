@@ -15,8 +15,8 @@ from gtts import gTTS
 from googletrans import Translator
 
 
-st.title("TRADUCTOR.")
-st.subheader("Escucho lo que quieres traducir.")
+st.title("TRADUCTOR DE VOZ :)")
+st.subheader("Dime lo que quieras traducir")
 
 
 image = Image.open('OIG7.jpg')
@@ -29,9 +29,9 @@ with st.sidebar:
                  " la configuración de lenguaje que necesites.")
 
 
-st.write("Toca el Botón y habla lo que quires traducir")
+st.write("Toca el Botón, háblame y traduciré lo que digas")
 
-stt_button = Button(label=" Escuchar  🎤", width=300,  height=50)
+stt_button = Button(label=" Escuchar  🎤", width=400,  height=80)
 
 stt_button.js_on_event("button_click", CustomJS(code="""
     var recognition = new webkitSpeechRecognition();
@@ -73,35 +73,35 @@ if result:
     text = str(result.get("GET_TEXT"))
     in_lang = st.selectbox(
         "Selecciona el lenguaje de Entrada",
-        ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
+        ("Inglés", "Español", "Latìn", "Coreano", "Gaélico escocés", "Japonés"),
     )
     if in_lang == "Inglés":
         input_language = "en"
     elif in_lang == "Español":
         input_language = "es"
-    elif in_lang == "Bengali":
-        input_language = "bn"
+    elif in_lang == "Latín":
+        input_language = "la"
     elif in_lang == "Coreano":
         input_language = "ko"
-    elif in_lang == "Mandarín":
-        input_language = "zh-cn"
+    elif in_lang == "Gaélico escocés":
+        input_language = "gd"
     elif in_lang == "Japonés":
         input_language = "ja"
     
     out_lang = st.selectbox(
         "Selecciona el lenguaje de salida",
-        ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
+        ("Inglés", "Español", "Latín", "Coreano", "Gaélico escocés", "Japonés"),
     )
     if out_lang == "Inglés":
         output_language = "en"
     elif out_lang == "Español":
         output_language = "es"
-    elif out_lang == "Bengali":
-        output_language = "bn"
+    elif out_lang == "Latín":
+        output_language = "la"
     elif out_lang == "Coreano":
         output_language = "ko"
-    elif out_lang == "Mandarín":
-        output_language = "zh-cn"
+    elif out_lang == "Gaélico escocés":
+        output_language = "gd"
     elif out_lang == "Japonés":
         output_language = "ja"
     
